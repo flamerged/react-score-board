@@ -1,25 +1,35 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import Counter from './Counter';
 
-const Player = props => {
-    return (
-        <div className="player">
-            <span className="player-name">
-                <button
-                    className="remove-player"
-                    onClick={() => props.removePlayer(props.id)}
-                >
-                    ✖
-                </button>
-                {props.playerName}
-            </span>
-            <Counter
-                score={props.score}
-                changeScore={props.changeScore}
-                index={props.index}
-            />
-        </div>
-    );
-};
+class Player extends PureComponent {
+    render() {
+        const {
+            removePlayer,
+            playerName,
+            score,
+            changeScore,
+            index,
+            id
+        } = this.props;
+        return (
+            <div className="player">
+                <span className="player-name">
+                    <button
+                        className="remove-player"
+                        onClick={() => removePlayer(id)}
+                    >
+                        ✖
+                    </button>
+                    {playerName}
+                </span>
+                <Counter
+                    score={score}
+                    changeScore={changeScore}
+                    index={index}
+                />
+            </div>
+        );
+    }
+}
 
 export default Player;
