@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Stats = ({ players }) => {
+const Stats = ({ players, highestScore }) => {
     return (
         <table className="stats">
             <tbody>
@@ -16,6 +16,10 @@ const Stats = ({ players }) => {
                             return total + player.score;
                         }, 0)}
                     </td>
+                </tr>
+                <tr>
+                    <td>Highest Score:</td>
+                    <td>{highestScore}</td>
                 </tr>
             </tbody>
         </table>

@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Counter from './Counter';
+import Crown from './Crown';
 
 class Player extends PureComponent {
     static propTypes = {
@@ -24,6 +25,8 @@ class Player extends PureComponent {
             score,
             changeScore,
             index,
+            highestScore,
+            handleHighestScore,
             id
         } = this.props;
         return (
@@ -35,12 +38,14 @@ class Player extends PureComponent {
                     >
                         ✖
                     </button>
+                    <Crown highestScore={highestScore <= score} />
                     {playerName}
                 </span>
                 <Counter
                     score={score}
                     changeScore={changeScore}
                     index={index}
+                    handleHighestScore ={handleHighestScore}
                 />
             </div>
         );

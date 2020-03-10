@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import Stats from './Stats';
 import Stopwatch from './StopWatch';
 
-const Header = ({ players, title }) => {
+const Header = ({ players, title, highestScore }) => {
     return (
         <header>
-            <Stats players={players} />
+            <Stats players={players} highestScore={highestScore} />
             <h1>{title}</h1>
             <Stopwatch />
         </header>
@@ -16,11 +16,11 @@ const Header = ({ players, title }) => {
 Header.propTypes = {
     players: PropTypes.arrayOf(PropTypes.object),
     title: PropTypes.string
-}
+};
 
 Header.defaultProps = {
-    title: "Empty title",
-    players: "Could not read player"
-}
+    title: 'Empty title',
+    players: 'Could not read player'
+};
 
 export default Header;
