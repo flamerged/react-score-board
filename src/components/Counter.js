@@ -7,8 +7,10 @@ const Counter = ({ index, changeScore, score, handleHighestScore }) => {
             <button
                 className="counter-action decrement"
                 onClick={() => {
-                    changeScore(index, -1);
-                    handleHighestScore();
+                    if (score > 0) {
+                        changeScore(index, -1);
+                        handleHighestScore();
+                    }
                 }}
             >
                 {' '}

@@ -38,14 +38,16 @@ class Player extends PureComponent {
                     >
                         ✖
                     </button>
-                    <Crown highestScore={highestScore <= score} />
+                    <Crown
+                        highestScore={highestScore <= score && highestScore > 0}
+                    />
                     {playerName}
                 </span>
                 <Counter
                     score={score}
                     changeScore={changeScore}
                     index={index}
-                    handleHighestScore ={handleHighestScore}
+                    handleHighestScore={handleHighestScore}
                 />
             </div>
         );
