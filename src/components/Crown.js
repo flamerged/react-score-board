@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 
 class Crown extends PureComponent {
     render() {
@@ -21,5 +22,9 @@ class Crown extends PureComponent {
         );
     }
 }
+
+Crown.propTypes = {
+    highestScore: PropTypes.bool
+};
 
 export default Crown;
